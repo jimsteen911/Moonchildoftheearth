@@ -1,39 +1,427 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>King David Contracting LLC</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>moonchildoftheearth.com</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+```
+body {
+  background: linear-gradient(160deg, #0a0a0a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533e85 100%);
+  color: #f5f5f5;
+  overflow-x: hidden;
+}
+
+nav, footer, .container {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1rem;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h2, h3 {
+  color: #ffcc80;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+a {
+  color: #80cbc4;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: #b2dfdb;
+  text-shadow: 0 0 10px rgba(128, 203, 196, 0.5);
+}
+
+/* Carousel Styles */
+.carousel-container {
+  position: relative;
+  max-width: 800px;
+  margin: 2rem auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  height: 100%;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0;
+  transition: transform 0.3s ease;
+}
+
+.carousel-slide:hover img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  padding: 3rem 2rem 1rem;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
+
+.carousel-slide:hover .product-info {
+  transform: translateY(0);
+}
+
+.product-title {
+  font-size: 1.5rem;
+  color: #ffcc80;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.product-price {
+  font-size: 2rem;
+  color: #4caf50;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  color: #b0b0b0;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-nav:hover {
+  background: rgba(255, 204, 128, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-nav.prev {
+  left: 1rem;
+}
+
+.carousel-nav.next {
+  right: 1rem;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: #ffcc80;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: rgba(255, 204, 128, 0.6);
+}
+
+/* Enhanced styling for other elements */
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-section {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(255, 204, 128, 0.1), rgba(128, 203, 196, 0.1));
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cosmic-glow {
+  animation: cosmicGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes cosmicGlow {
+  from { text-shadow: 0 0 20px rgba(255, 204, 128, 0.5); }
+  to { text-shadow: 0 0 30px rgba(128, 203, 196, 0.8); }
+}
+
+.subscribe-section {
+  background: linear-gradient(135deg, rgba(83, 62, 133, 0.2), rgba(15, 52, 96, 0.2));
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+button[type="submit"] {
+  background: linear-gradient(135deg, #ffcc80, #80cbc4);
+  color: #1a1a1a;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 204, 128, 0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    height: 400px;
+  }
+  
+  .carousel-slide img {
+    height: 300px;
+  }
+  
+  .product-info {
+    padding: 2rem 1rem 1rem;
+  }
+  
+  .product-title {
+    font-size: 1.2rem;
+  }
+  
+  .product-price {
+    font-size: 1.5rem;
+  }
+}
+```
+
+  </style>
 </head>
 <body>
-  <header>
-    <h1>King David Contracting LLC</h1>
-    <p>Custom Solutions Is What We Do</p>
-  </header>
-
-  <section class="intro">
-    <p>We provide strategic help for people and businesses who need real solutions. From paperwork to web design — if it’s confusing, we simplify it. If it’s broken, we fix it. If it’s missing, we build it.</p>
-  </section>
-
-  <section class="services">
-    <h2>Services</h2>
+  <nav class="container-fluid">
     <ul>
-      <li><strong>SAM.gov Fix</strong>: Profile setup, corrections, and eligibility alignment.</li>
-      <li><strong>Strategic Document Creation</strong>: Grant writing, operating agreements, capability statements, and web design.</li>
-      <li><strong>LLC Setup – Start to Finish</strong>: Name search, EIN, compliance, and full registration.</li>
-      <li><strong>Custom Requests</strong>: No box thinking. We handle complex, sensitive, and unusual requests.</li>
+      <li><strong class="cosmic-glow">moonchildoftheearth</strong></li>
     </ul>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#" role="button">Shop</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <div class="hero-section">
+      <hgroup>
+        <h2 class="cosmic-glow">I love my cousin</h2>
+        <h3>but this should be our e-commerce store</h3>
+      </hgroup>
+      <p>A sacred space for beauty, creatures, and the spirit of the Earth & Moon.</p>
+    </div>
+
+```
+<div class="carousel-container">
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="carousel-slide">
+        <img src="pic1.png" alt="Mystical Forest Energy" />
+        <div class="product-info">
+          <div class="product-title">Mystical Forest Energy</div>
+          <div class="product-price">$420.69</div>
+          <div class="product-description">Guaranteed to make you one with nature (results may vary)</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="pic2.png" alt="Lunar Phase Alignment" />
+        <div class="product-info">
+          <div class="product-title">Lunar Phase Alignment</div>
+          <div class="product-price">$888.88</div>
+          <div class="product-description">Premium moon vibes, celebrity endorsed by wolves</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="pic3.png" alt="Cosmic Connection Kit" />
+        <div class="product-info">
+          <div class="product-title">Cosmic Connection Kit</div>
+          <div class="product-price">$1,337.00</div>
+          <div class="product-description">Elite level spirituality for advanced moon children only</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="pic4.png" alt="Earth Mother's Blessing" />
+        <div class="product-info">
+          <div class="product-title">Earth Mother's Blessing</div>
+          <div class="product-price">$999.99</div>
+          <div class="product-description">Limited edition blessing, only 3 left in stock!</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="pic5.png" alt="Celestial Harmony Package" />
+        <div class="product-info">
+          <div class="product-title">Celestial Harmony Package</div>
+          <div class="product-price">$2,222.22</div>
+          <div class="product-description">Achieve perfect balance or your money back*</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="pic6.png" alt="Sacred Geometry Masterclass" />
+        <div class="product-info">
+          <div class="product-title">Sacred Geometry Masterclass</div>
+          <div class="product-price">$777.77</div>
+          <div class="product-description">Unlock the secrets of the universe (calculator not included)</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="pic7.png" alt="Spiritual Awakening Deluxe" />
+        <div class="product-info">
+          <div class="product-title">Spiritual Awakening Deluxe</div>
+          <div class="product-price">$3,333.33</div>
+          <div class="product-description">Instant enlightenment in just 7 easy payments</div>
+        </div>
+      </div>
+      <div class="carousel-slide">
+        <img src="pic8.png" alt="Moon Child Certification" />
+        <div class="product-info">
+          <div class="product-title">Moon Child Certification</div>
+          <div class="product-price">$5,555.55</div>
+          <div class="product-description">Official moon child status - flex on your friends</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="carousel-nav prev" onclick="moveCarousel(-1)">❮</button>
+  <button class="carousel-nav next" onclick="moveCarousel(1)">❯</button>
+</div>
+
+<div class="carousel-indicators" id="indicators"></div>
+```
+
+  </main>
+
+  <section aria-label="Subscribe example" class="subscribe-section">
+    <div class="container">
+      <article>
+        <hgroup>
+          <h2>Stay Cosmic</h2>
+          <h3>Join us on this journey through Earth & Sky</h3>
+        </hgroup>
+        <form class="grid">
+          <input type="text" id="firstname" name="firstname" placeholder="Your name" aria-label="Your name" required />
+          <input type="email" id="email" name="email" placeholder="Your email" aria-label="Your email" required />
+          <button type="submit" onclick="event.preventDefault()">Notify Me</button>
+        </form>
+      </article>
+    </div>
   </section>
 
-  <section class="cta">
-    <h2>Need Help Now?</h2>
-    <p><a href="mailto:contact@moonchildoftheearth.com">Email Me</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 King David Contracting LLC</p>
+  <footer class="container">
+    <small><a href="#">Terms</a> • <a href="#">Privacy</a> • <small style="color: #666;">*Money back guarantee void in all dimensions</small></small>
   </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const totalSlides = slides.length;
+    const track = document.getElementById('carouselTrack');
+    const indicatorsContainer = document.getElementById('indicators');
+
+    // Create indicators
+    for (let i = 0; i < totalSlides; i++) {
+      const indicator = document.createElement('div');
+      indicator.className = 'indicator';
+      indicator.addEventListener('click', () => goToSlide(i));
+      indicatorsContainer.appendChild(indicator);
+    }
+
+    const indicators = document.querySelectorAll('.indicator');
+
+    function updateCarousel() {
+      const translateX = -currentSlide * 100;
+      track.style.transform = `translateX(${translateX}%)`;
+      
+      // Update indicators
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function moveCarousel(direction) {
+      currentSlide += direction;
+      
+      if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+      } else if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+      }
+      
+      updateCarousel();
+    }
+
+    function goToSlide(slideIndex) {
+      currentSlide = slideIndex;
+      updateCarousel();
+    }
+
+    // Auto-advance carousel
+    setInterval(() => {
+      moveCarousel(1);
+    }, 5000);
+
+    // Initialize carousel
+    updateCarousel();
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') moveCarousel(-1);
+      if (e.key === 'ArrowRight') moveCarousel(1);
+    });
+  </script>
+
 </body>
 </html>
